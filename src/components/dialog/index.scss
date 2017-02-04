@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+@import 'config';
+@import 'classes';
+
+#c-dialog{
+    @extend %full-center;
+    background-color: rgba(0,0,0,.3);
+    &.display-none {
+        display: none;
+    }    .toast {
+        @extend %full-center;
+        width: 1.4rem;
+        height: 1rem;
+        border-radius: .05rem
+    }
+    .msg {
+        @extend %full-center;
+        top: .7rem;
+        text-align: center;
+        color: #fff;
+        font-size: .14rem;
+    }
+    .c-loading{
+        z-index: $z-index-loading;
+    }
+}
+
+// 菊花瓣
+.c-loading-chrysanthemum{
+    background: rgba(0,0,0,.5) url(/build/webapp/share/images/loading@3x.gif) no-repeat center .24rem;
+    background-size: .33rem .33rem;
+}

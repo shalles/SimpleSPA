@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import 'theme';
+
+// 根元素 100px 参照
+$font-size-base: 100px; //1rem
+$font-size: $font-size;
+$font-size-title: $font-size-large;
+$font-size-link: $font-size-small;
+
+// 默认字体
+$font-family: 'PingFang SC','Helvetica Neue','黑体',STHeitiSC-Light,Helvetica-Light,arial,sans-serif,'Droid Sans Fallback';
+
+$line-height: 1.5;
+
+// 主题色调
+$theme-orange: $color-orange;
+
+// 页面色
+$color-bg: #fafafa;
+$color-bg-disable: #e0e0e0;
+$color-border: #ccc;
+$color-border-light: #eee;
+$color-border-dark: #adadad;
+$color-border-disable: #ccc;
+$color-title: #333;
+$color-content: #666;
+$color-content-light: #adadad;
+$color-content-dark: #333;
+$color-link: $theme-orange;
+$color-link-hover: $theme-orange;
+$color: $color-content-dark;
+
+$color-mask-white: rgba(255,255,255,.7);
+$color-mask-black: rgba(0,0,0,.3);
+$color-mask-guider: rgba(0,0,0,.5);
+
+// 厂商
+$vendors: -webkit-;
+
+// z-index 其他应小于1000
+$z-index-loading: 2000;
+$z-index-dialog: 1100;
+$z-index-mask: 1000;
+$z-index-guider: 1500;
+
+// button
+$color-btn-work-bg: $theme-orange;
+$color-btn-work-cnt: #fff;
+$color-btn-disable: $color-border-disable;
+$btn-radius: .05rem;
+$btn-height: .38rem;
+$btn-line-height: $btn-height;
+
+$base-url: '/build/webapp/';
+$base-source-url: $base-url + 'share/images/';

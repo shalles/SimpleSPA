@@ -1,0 +1,39 @@
+@charset "utf-8";
+@import 'scss-utils';
+
+%line-arrow {
+    content: '';
+    display: inline-block;
+    width: .07rem;
+    height: .07rem;
+    border-style: solid;
+    border-width: .01rem .01rem 0 0;
+    // border-color: #ccc;
+    @include transform(rotate(45deg))
+}
+
+@function line-arrow-map($direct){
+    @if $direct == right {
+        @return 45deg;
+    } @else if $direct == left {
+        @return -135deg;
+    } @else if $direct == top {
+        @return -45deg;
+    } @else if $direct == bottom {
+        @return 135deg;
+    }
+}
+
+@mixin line-arrow($color: #ccc, $direction: right, $w: .07rem) {
+    @extend %line-arrow;
+    @if $w != .07rem {
+        width: $w !important;
+        height: $w !important;
+    }
+    // @if $color != #ccc {
+        border-color: $color;
+    // }
+    @if $direction != right {
+        @include transform(rotate(line-arrow-map($direction))!important);
+    }
+}

@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import 'scss-utils';
+// @import 'fonts/webapp';
+
+/*------------m-star------------*/
+
+/* use
+    控制m-star-on的width: .12rem * n
+ */
+
+/*
+<div class="w-star">
+    <p class="icon star-gray">
+        <i class="icon star-light"></i>
+    </p>
+</div>
+ */
+
+@mixin star-level($fs: .14rem) {
+    .icon.star-light::before, .icon.star-gray::before {
+        content: "\e928\e928\e928\e928\e928";
+        font-size: $fs;
+    }
+    $width: 5 * $fs;
+    position: relative;
+    display: inline-block;
+    height: $fs;
+    line-height: $fs;
+    width: $width;
+    overflow: hidden;
+    .star-gray {
+        padding: 0;
+        margin: 0;
+        width: $width;
+        color: $color-gray-ss;
+    }
+    .star-light {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        overflow: hidden;
+        color: $color-orange-light;
+        -webkit-transition: all .3s ease 0s;
+        transition: all .3s ease 0s;
+    }
+}

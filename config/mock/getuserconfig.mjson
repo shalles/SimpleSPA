@@ -1,0 +1,7 @@
+{
+    "errno": 0,
+    "errmsg": "ok",
+    "data": {
+        "userType|1-1": ["new", "normal"]
+    }
+}

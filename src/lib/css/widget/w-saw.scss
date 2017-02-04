@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import 'scss-utils';
+
+@mixin saw-down($w: 6px){
+    $size: $w * 2;
+    background-image: -webkit-linear-gradient(-45deg, transparent 50%, #fff 50%, #fff 100%),-webkit-linear-gradient(45deg, transparent 50%, #fff 50%, #fff 100%);
+    background-image: linear-gradient(-45deg, transparent 50%, #fff 50%, #fff 100%),linear-gradient(45deg, transparent 50%, #fff 50%, #fff 100%);
+    background-repeat-y: no-repeat;
+    background-position: left top;
+    background-size: $size $size;
+    height: $size;
+}

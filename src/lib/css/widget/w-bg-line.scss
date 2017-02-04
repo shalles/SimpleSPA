@@ -1,0 +1,15 @@
+@charset "utf-8";
+@import 'scss-utils';
+
+@mixin bg-line($len: 80%, $pos: center bottom, $horizontal: true, $color: #eee){
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(transparent, $color 1px, transparent 1px);
+    background-image: linear-gradient(transparent, $color 1px, transparent 1px);
+    @if $horizontal {
+        background-size: $len 1px;
+    } @else {
+        background-repeat-y: repeat;
+        background-size: 1px $len;
+    }
+    background-position: $pos;
+}

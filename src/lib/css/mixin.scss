@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import 'config';
+
+@mixin vendor-prefix($property, $value){
+    @each $vendor in $vendors{
+        #{$vendor}#{$property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin box-sizing($box-sizing: border-box) {
+    @include vendor-prefix(box-sizing, $box-sizing);
+}
+
+@mixin fullbox($position: absolute, $margin: auto) {
+    position: $position;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: $margin;
+}
+
+@mixin root-scroll($scroll: false) {
+    html,
+    body {
+        @if $scroll {
+            overflow: visible;
+            height: auto;
+        } @else {
+            overflow: hidden;
+            height: 100%;
+        }
+    }
+}
+
+@mixin ellipsis($width: null) {
+    width: $width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin text-hide($width: null) {
+    width: $width;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+@mixin transition($transition...){
+    @include vendor-prefix(transition, $transition);
+}
+
+@mixin animation($animation...){
+    @include vendor-prefix(animation, $animation);
+}
+
+@mixin transform($transform...) {
+    @include vendor-prefix(transform, $transform);
+}
+@mixin transform-origin($transform-origin) {
+    @include vendor-prefix(transform-origin, $transform-origin);
+}
+
+@mixin perspective($perspective) {
+    @include vendor-prefix(perspective, $perspective);
+}
+@mixin perspective-origin($perspective-origin) {
+    @include vendor-prefix(perspective-origin, $perspective-origin);
+}
+
+@mixin filter($filter...) {
+    @include vendor-prefix(filter, $filter);
+}
+
+@mixin user-select($user-select: none) {
+    @include vendor-prefix(user-select, $user-select);
+}
+
+// 定义UA默认外观
+@mixin appearance($appearance: none) {
+    @include vendor-prefix(appearance, $appearance);
+}
+
+@mixin backface-visibility($backface-visibility) {
+    @include vendor-prefix(backface-visibility, $backface-visibility);
+}

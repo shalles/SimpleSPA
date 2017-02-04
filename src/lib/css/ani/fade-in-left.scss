@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/**
+ * 动画: 定义从左侧淡入动画
+ */
+@-webkit-keyframes fade-in-left {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0)
+	}
+}
+@keyframes fade-in-left {
+	0% {
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: translate3d(0, 0, 0)
+	}
+}
+
+.ani.fade-in-left {
+	display: block;
+	-webkit-animation-name: fade-in-left;
+	animation-name: fade-in-left;
+}
+.ani-fil {
+	-webkit-transform: translate3d(-100%, 0, 0)!important;
+	transform: translate3d(-100%, 0, 0)!important;
+}

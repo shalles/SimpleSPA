@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import 'scss-utils';
+
+%w-btn {
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    border: .01rem solid;
+    cursor: pointer;
+    &.white {
+        border-color: $color-gray-s;
+        background-color: $color-white;
+        color: $color-gray-light;
+    }
+    &.orange {
+        border-color: $color-orange;
+        background-color: $color-orange;
+        color: $color-white;
+    }
+    &.disable{
+        opacity: .3;
+        border-color: $color-gray-s !important;
+        background-color: $color-gray-s !important;
+        color: $color-gray-light !important;
+    }
+}
+
+@mixin w-btn($w: 50%, $h: .38rem, $fs: 14px){
+    .w-btn{
+        @extend %w-btn;
+
+        width: $w;
+        height: $h;
+        line-height: $h;
+        font-size: $fs;
+
+        @content
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>Simple SPA webapp</title>
+    <link rel="stylesheet" href="/build/webapp/main/entry/css/index.css">
+    <script src="/build/webapp/zepto.min.js"></script>
+    <script src="/build/webapp/common.bundle.js"></script>
+    <script>
+        var _baseUrl = '/build/webapp/';
+        window.pageSrcMap = {
+            "main.pageA": [{
+                "page": _baseUrl + "main/pageA/index.html",
+                "scripts": [_baseUrl + "main/pageA/js/index.bundle.js"],
+                "styles": [_baseUrl + "main/pageA/css/index.css"]
+            }],
+            "main.pageB": [{
+                "page": _baseUrl + "main/pageB/index.html",
+                "scripts": [_baseUrl + "main/pageB/js/index.bundle.js"],
+                "styles": [_baseUrl + "main/pageB/css/index.css"]
+            }],
+            // {{ @builder create entry }}
+            "external": {
+                "external_function.js": _baseUrl + "external/external_function/index.js"
+            }
+        }
+    </script>
+    <!-- <script src="/build/webapp/vendor.bundle.js"></script> -->
+</head>
+<body>
+    <div id="page-container" class="page-container"></div>
+    <!-- <input type="hidden" id="suorce-map" value="/build/webapp/main/source-map.json" /> -->
+    <script src="/build/webapp/main/entry/js/index.bundle.js"></script>
+</body>
+</html>

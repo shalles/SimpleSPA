@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import 'config';
+@import '../classes';
+
+// loading
+.w-loading{
+    display: none;
+    @extend %full-center;
+    z-index: $z-index-loading;
+    .msg {
+        margin: .4rem 0;
+        text-align: center;
+        color: #fa8119;
+        font-size: .18rem;
+    }
+}
+
+// 菊花瓣
+.w-loading-chrysanthemum{
+    background: rgba(0,0,0,.3) url(/build/webapp/share/images/loading@3x.gif) no-repeat center center;
+    background-size: .33rem .33rem;
+}

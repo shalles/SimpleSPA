@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import 'config';
+
+@function layerZ($type){
+    @if $type == dialog {
+        @return $z-index-dialog;
+
+    } @else if $type == mask {
+        @return $z-index-msk;
+
+    } @else if $type == guider {
+        @return $z-index-guider;
+
+    } @else if $type == loading {
+        @return $z-index-loading;
+    }
+}
+
+@function absolutePath($relativePath){
+    @return #{$bese-url}$relativePath;
+}

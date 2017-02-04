@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import 'scss-utils';
+/*------------m-guide-layer------------*/
+/*
+ use: 
+    指定: $guide-z: z-index;
+    则: $guide-z-img: $guide-z + 1;
+ */
+.m-guide{
+    display: none;
+    @extend %full-box;
+    position: fixed;
+    background-color: $color-mask-black;
+    &.show{
+        display: block;
+    }
+    .m-guide-img{
+        position: absolute;
+        z-index: 501;
+        width: 90%;
+        height: 250px;
+        right: 5%;
+        top: 70px;
+        background: url(xx.png) no-repeat top right;
+        background-size: contain;
+    }
+}
+

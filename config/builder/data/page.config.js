@@ -1,0 +1,1 @@
+module.exports={"baseUrl":"/build/pages/main/index.html?token=FEELJOIU786FUIWE&phone=13212345671","pages":[{"name":"main","url":"#"},{"name":"main.pageA","url":"#pageA"},{"name":"main.pageB","url":"#pageB"}]}

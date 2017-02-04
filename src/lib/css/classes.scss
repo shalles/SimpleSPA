@@ -1,0 +1,46 @@
+@charset "utf-8";
+@import 'config';
+@import 'mixin';
+
+%full-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+%full-center{
+    @extend %full-box;
+    margin: auto;
+}
+
+%compositor-layer{
+    @include vendor-prefix(transform, translateZ(0px));
+}
+
+%right-arrow {
+    content: '';
+    display: inline-block;
+    width: .07rem;
+    height: .07rem;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: .01rem .01rem 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+%text-ellipsis {
+    overflow: hidden;
+    -webkit-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%hide-scrollbar {
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}

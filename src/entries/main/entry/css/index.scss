@@ -1,0 +1,125 @@
+@charset "utf-8";
+@import 'scss-utils';
+@import 'reset';
+// 目前spa page 切换暂只支持这几个动画, 需要更多自己配置 并同步到js配置 简名 首字母缩写 eid fir for fil fol
+@import 'ani/classes';
+@import 'ani/elastic-in-down';
+@import 'ani/fade-in-right';
+@import 'ani/fade-out-right';
+// @import 'ani/fade-in-left';
+// @import 'ani/fade-out-left';
+@import 'ani/immed';
+// 小部件 lib/widget
+@import 'widget/w-btn';
+// 组件src/components
+@import 'dialog/index';
+
+@import 'fonts/style.scss';
+
+@include root-scroll;
+
+body{
+    &.spa-update{
+        &::before, &::after{
+            position: absolute;
+            width: 100%;
+            height: 80px;
+        }
+        &::before{
+            content: '';
+            background-image: linear-gradient(transparent 0px, #999 100px);
+        }
+        &::after{
+            content: '再拉就要刷新啦！';
+            height: 20px;
+            top: 60px;
+            text-align: center;
+            color: #fff;
+        }
+        &.spa-update-end::after{
+            content: '';
+            background-image: url(/build/v2/share/images/loading@3x.gif);
+            background-size: .2rem .2rem;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.page-container{
+    @extend %full-box;
+    overflow: hidden;
+    @include w-btn();
+    font-weight: 300;
+    z-index: 1;
+
+    .opt-mask::after{
+        @extend %full-box;
+        position: fixed;
+        overflow: hidden;
+        background-color: rgba(255,255,255,.3);
+    }
+
+    .page{
+        @extend %full-box;
+        @extend %compositor-layer;
+        width: 100%;
+        background-color: $color-bg;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        z-index: 0;
+        &.drag-ltr{
+            @include vendor-prefix(box-shadow, -4px 0 16px #aaa);
+        }
+        &.drag-rtl{
+            @include vendor-prefix(box-shadow, -4px 0 16px #aaa);
+        }
+        .hide{
+            opacity: 0;
+        }
+        .show{
+            opacity: 1;
+        }
+    }
+    // 替换 style.display + important
+    .d-hide{
+        display: none!important;
+    }
+    .d-show{
+        display: block;
+    }
+    
+    .new_logo_svg{
+        @extend %full-center;
+        width: 120px;
+    }
+
+    .page.entry{
+        .msg {
+            margin: .4rem 0;
+            text-align: center;
+            color: $color-orange;
+            font-size: .18rem;
+        }
+    }
+
+    .page-load-error{
+        @extend %full-box;
+        width: auto;
+        height: 1.2rem;
+        text-align: center;
+        margin: auto;
+        .msg {
+            padding: .1rem;
+        }
+        .btn{
+            width: 1.2rem;
+        }
+    }
+}
+
+.ani {
+    // 定义动画的持续时间
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s;
+}

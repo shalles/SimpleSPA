@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>Simple SPA webapp</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <h2>Simple SPA webapp</h2>
+    </header>
+    
+    <div class="panel-container">
+        <section id="panel-index">
+            <p class="notice">页面名字必须包含包名和页面名。如：main.pageA</p>
+            <label for="pagename">创建新page:</label>
+            <input type="text" name="pagename" id="pagename">
+            
+            <button id="delete-page" type="button">删除</button>
+            <button id="create-page" type="button">创建</button>
+
+            <div id="page-list" class="page-list">
+            </div>
+        </section>
+        <section id="panel-component">
+            
+        </section>
+        <section id="panel-document">
+            <a target="_block" href="https://github.com/shalles/SimpleSPA/blob/oldversion/README.md">项目目录介绍</a>
+            <a target="_block" href="https://github.com/shalles/SimpleSPA/tree/oldversion/src/lib/js/spa">spa基础框架</a>
+        </section>
+    </div>
+    <footer>
+        
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>

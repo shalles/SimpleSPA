@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import 'config';
+@import 'mixin';
+
+*, ::before, ::after {
+    // 将元素的盒模型统一为: border-box
+    @include box-sizing(border-box);
+    // 清除元素tap时出现的焦点框
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    position: relative;
+    background-color: $color-bg;
+    color: $color;
+    font-size: $font-size-base;
+    @include user-select();
+}
+
+body {
+    margin: 0;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-family: $font-family;
+}
+
+ul, ol, dl, dd, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, button, p, th, td, pre{
+    margin: 0;
+    padding: 0;
+}
+
+// 1. 清除webkit下表单元素的outline
+input, textarea, button, select, a {
+    outline: 0 none;
+    border: none;
+}
+
+// 1. 让表单元素具有颜色继承
+// 2. iOS上当禁用时会设置opacity: .4
+input, textarea, button, select {
+    color: inherit;
+    &:disabled {
+        opacity: 1;
+    }
+}
+// 重置按钮
+input[type="button"], button{
+    @include appearance;
+}
+// 禁止长按链接与图片弹出菜单
+a, img {
+    -webkit-touch-callout: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}

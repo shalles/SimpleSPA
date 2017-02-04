@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/**
+ * 动画: 立即执行
+ */
+@-webkit-keyframes immed-in {
+    0% {opacity: 1;}
+}
+@keyframes immed-in {
+    0% {opacity: 1;}
+}
+
+@-webkit-keyframes immed-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes immed-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.ani.immed-in, .ani.immed-out {
+    -webkit-animation-duration: .01s;
+    animation-duration: .01s;
+}
+
+.ani.immed-in {
+    -webkit-animation-name: immed-in;
+    animation-name: immed-in;
+}
+
+.ani.immed-out {
+    -webkit-animation-name: immed-out;
+    animation-name: immed-out;
+}
