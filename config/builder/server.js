@@ -33,7 +33,8 @@ function(req, res, require){
             };
             resData = require(path.join(basepath, 'command/deletepage'))(page, cwd);
             if(resData.errno == 0){
-                config.pages.splice(config.pages.indexOf(resData.page, 1));
+                var idx = config.pages.indexOf(resData.page)
+                idx !== -1 && config.pages.splice(idx, 1);
                 fs.writeFileSync(configpath, 'module.exports=' + JSON.stringify(config));
             }
             break;
