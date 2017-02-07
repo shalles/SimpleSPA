@@ -1,4 +1,4 @@
-# Taxi Webapp v2
+# Simple SPA webapp
 
 ## 项目介绍
 
