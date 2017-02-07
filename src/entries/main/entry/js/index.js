@@ -24,6 +24,8 @@ SimpleSPA.register({
     }
 });
 
+
+
 window.SimpleSPA.register({
     name: 'main.pageA',
     title: 'pageA',

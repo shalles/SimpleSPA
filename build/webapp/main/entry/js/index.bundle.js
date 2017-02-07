@@ -1,4 +1,4 @@
-webpackJsonp([0,3],[
+webpackJsonp([0,1],[
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -27,6 +27,8 @@ webpackJsonp([0,3],[
 	        console.log('page index')
 	    }
 	});
+
+
 
 	window.SimpleSPA.register({
 	    name: 'main.pageA',
