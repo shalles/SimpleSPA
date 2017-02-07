@@ -1,22 +1,23 @@
+var chalk = require('chalk');
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
-  },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: 'standard',
-  // required to lint *.vue files
-  plugins: [
-    'html'
+  "envs": [
+    "browser",
+    "commonjs",
+    "node",
+    "jquery"
   ],
-  // add your custom rules here
-  'rules': {
-    // allow paren-less arrow functions
-    'arrow-parens': 0,
-    // allow async-await
-    'generator-star-spacing': 0,
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+  "globals": [
+    'SPA', 'WeixinJsBridge'
+  ],
+  // "ecmaFeatures": {
+  //     "modules": true
+  // },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["error", 2],
+    // "semi": ["error", "always"],
+    // "quotes": ["error", "single"],
+    // "no-console": ["error"],
+    "linebreak-style": ["error", "unix"]
   }
-}
+};
